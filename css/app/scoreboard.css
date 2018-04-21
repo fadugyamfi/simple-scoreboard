@@ -1,0 +1,58 @@
+#scoreboard {
+    
+}
+
+#scoreboard > header {
+    background-color: #069;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 5px;
+    padding: 5px;
+    display: table-row;
+}
+
+#scoreboard > header h2,
+#scoreboard > header h3 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+#scoreboard > header img {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    display: inline-block;
+}
+
+#scoreboard > header .media {
+    width: 50%;
+    margin-left: 25%;
+}
+
+#scoreboard > header .media .media-body {
+    vertical-align: middle;
+}
+
+#scoreboard > header .media .media-left {
+    text-align: right;
+}
+
+#scoreboard > section {
+    width: 100%;
+    margin: 0px auto;
+    display: table;
+}
+
+#scoreboard > section > aside {
+    display: table-cell;
+    width: 20%;
+    box-sizing: border-box;
+    padding: 5px;
+    vertical-align: top;
+}
+
+#scoreboard > section > section {
+    box-sizing: border-box;
+    padding: 5px;
+    vertical-align: top;
+}

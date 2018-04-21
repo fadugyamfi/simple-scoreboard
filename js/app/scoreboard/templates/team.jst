@@ -1,0 +1,20 @@
+<div class="team">
+    <div class="score_block">
+        <div class="team_name">{{name}}</div>
+        <div class="scores">
+            <div class="grouper">
+                {{#rounds}}
+                <div class="score round">
+                    <!--<p class='title'>Round {{number}}</p>-->
+                    <p class='number'>{{score}}</p>
+                </div>
+                {{/rounds}}
+
+                <div class="score total">
+                    <p class='number'>{{total_score}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

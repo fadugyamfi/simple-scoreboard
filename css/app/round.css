@@ -1,0 +1,22 @@
+.rounds-list ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.rounds-list ul li {
+    margin: 10px;
+    text-align: center;
+}
+
+.rounds-list ul li span {
+    display: table-cell;
+    text-align: center;
+    font-size: 24px;
+    background-color: #069;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    color: white;
+    vertical-align: middle;
+}

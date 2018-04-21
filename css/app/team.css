@@ -1,0 +1,67 @@
+.team {
+    margin: 10px;
+    background-color: #069;
+    border-radius: 20px;
+    color: #fff;
+    border: solid 2px #069;
+    box-sizing: border-box;
+}
+
+.team .score_block {
+    display: table;
+    width: 100%;
+}
+
+.team .score_block .team_name {
+    font-size: 50px;
+    font-weight: bold;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.team .score_block .scores {
+    display: table-cell;
+    width: 45%;
+    background-color: #fff;
+    color: #069;
+    border: solid 2px #069;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+.team .score_block .scores .grouper {
+    display: table;
+    width: 100%;
+}
+
+.team .score_block .score {
+    font-weight: bold;
+    text-align: center;
+    display: table-cell;
+    width: 25%;
+    background-color: #fff;
+    color: #069;
+    padding: 5px 10px;
+    border-left: solid 1px #dedede;
+}
+
+.team .score_block .score.total {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.team .score_block .score .title {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+.team .score_block .score .number {
+    margin: 0px;
+    font-size: 70px;
+    line-height: 70px;
+}

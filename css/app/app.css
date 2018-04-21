@@ -1,0 +1,11 @@
+@import url('../bootstrap.min.css');
+@import url('../bootstrap-responsive.min.css');
+@import url('../bootstrap-theme.min.css');
+@import url('../font-awesome.min.css');
+@import url('../font-awesome-animation.min.css');
+@import url('../animate.css');
+
+@import url('scoreboard.css');
+@import url('team.css');
+@import url('round.css');
+@import url('control_board.css');
