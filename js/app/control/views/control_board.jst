@@ -1,72 +1,81 @@
-<div class="container-fluid">
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <span class="navbar-brand mb-0 h1" href="#">Simple Scoreboard Control</span>
 
-    <h1 style='margin-bottom: 0px;'>Scoreboard Control</h1>
-    <h3>30th Anniversary Inter-Church Quiz</h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
 
+<div class="container-fluid mt-2">
 
-    <div style="padding: 15px;">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-8">
-                                Teams
-                            </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body border-bottom">
+                    <div class="row">
+                        <div class="col-8">
+                            <h5>Teams</h5>
                         </div>
-                    </div>
 
-                    <div class="panel-body">
-                        <form class="form form-inline">
-                            Team Name:
-                            <input type="text" name="team_name" class="js-team-name-field form-control" placeholder="Team Name" /> Rounds:
-                            <input type="number" name="rounds" class="js-rounds-field form-control" value="3" />
-
-                            <button type="button" class="btn btn-sm btn-info js-add-team-btn">Add Team</button>
-
-                            <!--<button type="button" class="btn btn-sm btn-primary js-add-round-btn pull-right">Add Round</button>-->
-                        </form>
-                    </div>
-
-                    <div class="panel-body" style="padding: 15px;">
-                        <div class="row">
-                            {{#teams}}
-                            <div class="col-sm-2">
-                                <div class="panel panel-info team-panel" data-id="{{id}}">
-                                    <div class="panel-heading">
-                                        <h5><b>{{name}}</b></h5>
-                                    </div>
-
-                                    {{#rounds}}
-                                    <div class="panel-body">
-                                        <b>Round {{number}}</b>
-                                        <br />
-                                        <div class="input-group">
-                                            <span class='input-group-btn'>
-                                                <a href="" class="btn btn-default btn-sm js-add-score" data-round='{{number}}' data-score='-3'>-3</a>
-                                                <a href="" class="btn btn-default btn-sm js-add-score" data-round='{{number}}' data-score="-1">-1</a>
-                                            </span>
-                                            <input class="form-control input-sm text-center font-bold" type="text" value="{{score}}" />
-                                            <span class='input-group-btn'>
-                                                <a href="" class="btn btn-default btn-sm js-add-score" data-round='{{number}}' data-score="+1">+1</a>
-                                                <a href="" class="btn btn-default btn-sm js-add-score" data-round='{{number}}' data-score="+3">+3</a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {{/rounds}}
-
-                                    <div class="panel-footer">
-                                        <a href="#" class="btn btn-xs btn-danger js-delete-team">
-                                            <i class='fa fa-trash-o'></i> Delete
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            {{/teams}}
+                        <div class="col-4 text-right">
+                            <a href="#" class='btn btn-primary js-open-scoreboard'>Open Scoreboard</a>
                         </div>
                     </div>
                 </div>
 
+                <div class="card-body border-bottom">
+                    <form class="form form-inline">
+                        <input type="text" name="team_name" class="js-team-name-field form-control form-control-sm mr-1" placeholder="Team Name" /> 
+                        <input type="number" name="rounds" class="js-rounds-field form-control form-control-sm mr-1" placeholder="# Rounds" value="3" />
+
+                        <button type="button" class="btn btn-sm btn-info js-add-team-btn">Add Team</button>
+                    </form>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        {{#teams}}
+                        <div class="col-2">
+                            <div class="card team-panel" data-id="{{id}}">
+                                <div class="card-header">
+                                    <h5>
+                                        <b>{{name}}</b>
+                                    </h5>
+                                </div>
+
+                                {{#rounds}}
+                                <div class="card-body pt-2 pb-2">
+                                    <b>Round {{number}}</b>
+                                    <br />
+                                    <div class="input-group">
+                                        <span class='input-group-prepend'>
+                                            <a href="" class="btn btn-info btn-sm js-add-score" data-round='{{number}}' data-score='-3'>-3</a>
+                                            <a href="" class="btn btn-info btn-sm js-add-score" data-round='{{number}}' data-score="-1">-1</a>
+                                        </span>
+
+                                        <input class="form-control form-control-sm text-center font-bold" type="text" value="{{score}}" />
+                                        
+                                        <span class='input-group-append'>
+                                            <a href="" class="btn btn-info btn-sm js-add-score" data-round='{{number}}' data-score="+1">+1</a>
+                                            <a href="" class="btn btn-info btn-sm js-add-score" data-round='{{number}}' data-score="+3">+3</a>
+                                        </span>
+                                    </div>
+                                </div>
+                                {{/rounds}}
+
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-xs btn-danger js-delete-team">
+                                        <i class='fa fa-trash-o'></i> Delete
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {{/teams}}
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
+</div>

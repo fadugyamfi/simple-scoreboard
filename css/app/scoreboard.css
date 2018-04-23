@@ -8,7 +8,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-bottom: 5px;
     padding: 5px;
-    display: table-row;
+    font-size: 21px;
 }
 
 #scoreboard > header h2,
@@ -25,8 +25,7 @@
 }
 
 #scoreboard > header .media {
-    width: 50%;
-    margin-left: 25%;
+    
 }
 
 #scoreboard > header .media .media-body {

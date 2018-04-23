@@ -3,9 +3,9 @@ define([
     'app/base',
     'app/models/round',
     'app/models/team',
-    'text!./templates/header.jst',
-    'text!./templates/scoreboard.jst',
-    'text!./templates/team.jst'
+    'text!../templates/header.jst',
+    'text!../templates/scoreboard.jst',
+    'text!../templates/team.jst'
 ], function(Mustache, Base, Round, Team, HeaderTmpl, ScoreboardTmpl, TeamTmpl) {
 
     class Scoreboard extends Base {
@@ -18,7 +18,6 @@ define([
             super('#scoreboard', events);
 
             this.teams = [];
-            this.rounds = [];
             this.current_round = 1;
         }
 

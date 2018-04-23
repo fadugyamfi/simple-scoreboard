@@ -1,4 +1,3 @@
-/* global App */
 
 define([], function() {
 
@@ -49,11 +48,11 @@ define([], function() {
         
             $.each(listeners, function(key, func) {
                 if( $.isFunction() ) {
-                    App.listen(key, func);
+                    module.listen(key, func);
                 }
 
                 else {
-                    App.listen(key, function() {
+                    module.listen(key, function() {
                         module[func].apply(module, arguments);
                     });
                 }

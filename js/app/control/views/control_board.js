@@ -14,7 +14,8 @@ define([
                 'click .js-add-team-btn': 'onAddTeam',
                 'click .js-add-round-btn': 'onAddRound',
                 'click .js-add-score': 'onAddScore',
-                'click .js-delete-team': 'onDeleteTeam'
+                'click .js-delete-team': 'onDeleteTeam',
+                'click .js-open-scoreboard': 'openScoreboard'
             };
 
             super(element, events);
@@ -108,7 +109,12 @@ define([
 
             $("#control_board").html(rendered);
 
-            window.Components.App.trigger('ControlBoard.DataUpdated');
+            window.Components.App.trigger('ControlBoard.DataUpdated', this.teams);
+        }
+
+        openScoreboard() {
+            // open up the scoreboard ui
+            window.open('scoreboard.htm', "scoreboard", "toolbar=no,width=900,height=600,fullscreen=yes");
         }
     }
 
