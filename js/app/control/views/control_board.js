@@ -1,16 +1,23 @@
 define([
     'app/base',
+    'app/view',
     'mustache/mustache',
     'app/models/team',
     'app/models/round',
-    'text!./control_board.jst'
-], function(Base, Mustache, Team, Round, ControlBoardTmpl) {
+    'app/control/views/contest_config_view',
+    'text!../templates/control_board.jst'
+], function(Base, View, Mustache, Team, Round, ContestConfigView, ControlBoardTmpl) {
 
-    class ControlBoard extends Base {
+    class ControlBoard extends View {
 
         constructor() {
-            let element = "#control_board";
-            let events = {
+            super(ControlBoardTmpl, "#control_board");
+
+            this.regions = {
+                'config': '.js-region-config'
+            };
+
+            this.events = {
                 'click .js-add-team-btn': 'onAddTeam',
                 'click .js-add-round-btn': 'onAddRound',
                 'click .js-add-score': 'onAddScore',
@@ -18,10 +25,7 @@ define([
                 'click .js-open-scoreboard': 'openScoreboard'
             };
 
-            super(element, events);
-
             this.teams = [];
-            this.rounds = [];
         }
 
         getTeam(id) {
@@ -100,15 +104,9 @@ define([
             window.Components.App.trigger('Scoreboard.deleteTeam', removed[0]);
         }
 
-        render() {
-            Mustache.parse(ControlBoardTmpl);
-
-            var rendered = Mustache.render(ControlBoardTmpl, {
-                teams: this.teams
-            });
-
-            $("#control_board").html(rendered);
-
+        onRender() {
+            this.getRegion('config').show( new ContestConfigView() );
+            
             window.Components.App.trigger('ControlBoard.DataUpdated', this.teams);
         }
 

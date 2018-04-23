@@ -1,21 +1,22 @@
 define([
     'mustache/mustache',
     'app/base',
+    'app/view',
     'app/models/round',
     'app/models/team',
     'text!../templates/header.jst',
     'text!../templates/scoreboard.jst',
     'text!../templates/team.jst'
-], function(Mustache, Base, Round, Team, HeaderTmpl, ScoreboardTmpl, TeamTmpl) {
+], function(Mustache, Base, View, Round, Team, HeaderTmpl, ScoreboardTmpl, TeamTmpl) {
 
-    class Scoreboard extends Base {
+    class Scoreboard extends View {
 
         constructor() {
-            let events = {
+            super(ScoreboardTmpl, '#scoreboard');
+
+            this.events = {
                 'click .js-round': 'onRoundClicked'
             };
-
-            super('#scoreboard', events);
 
             this.teams = [];
             this.current_round = 1;

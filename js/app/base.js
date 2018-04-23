@@ -5,7 +5,7 @@ define([], function() {
 
         constructor(element, events, listeners) {
             this.element = element;
-            this.events = events || {};
+            this._events = events || {};
             this.listeners = listeners || {};
             this.callbacks = {};
 
@@ -13,13 +13,18 @@ define([], function() {
             this.bindListeners();
         }
 
+        set events(events) {
+            this._events = events;
+            this.bindEvents();
+        }
+
         bindEvents() {
             var module = this;
-            var events = module.events;
+            var events = module._events;
 
             $.each(events, function(e, v) {
                 var func = v;
-                console.log(e, v);
+                
                 var key_pcs = e.split(' ');
                 var trigger = key_pcs[0];
                 
