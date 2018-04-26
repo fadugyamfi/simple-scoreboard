@@ -1,13 +1,14 @@
 requirejs.config({
     baseUrl: 'js',
     paths: {
-        app: 'app'
+        app: 'app',
+        lib: 'lib'
     }
 });
 
 require([
     'jquery', 
-    'app/base',
+    'lib/base',
     'app/data_store',
     'app/control/views/control_board', 
 ], function ($, Base, DataStore, ControlBoard) {

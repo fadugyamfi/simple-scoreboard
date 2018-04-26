@@ -1,7 +1,7 @@
 define([
     'mustache/mustache',
-    'app/base',
-    'app/view',
+    'lib/base',
+    'lib/view',
     'app/models/round',
     'app/models/team',
     'text!../templates/header.jst',

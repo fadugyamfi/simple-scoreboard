@@ -6,7 +6,7 @@ define([], function() {
         constructor(element, events, listeners) {
             this.element = element;
             this._events = events || {};
-            this.listeners = listeners || {};
+            this._listeners = listeners || {};
             this.callbacks = {};
 
             this.bindEvents();
@@ -16,6 +16,11 @@ define([], function() {
         set events(events) {
             this._events = events;
             this.bindEvents();
+        }
+
+        set listeners(listeners) {
+            this._listeners = listeners;
+            this.bindListeners();
         }
 
         bindEvents() {
@@ -49,7 +54,7 @@ define([], function() {
 
         bindListeners() {
             var module = this;
-            var listeners = module.listeners;
+            var listeners = module._listeners;
         
             $.each(listeners, function(key, func) {
                 if( $.isFunction() ) {

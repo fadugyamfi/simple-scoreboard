@@ -1,6 +1,6 @@
 define([
-    'app/base',
-    'app/view',
+    'lib/base',
+    'lib/view',
     'mustache/mustache',
     'app/models/team',
     'app/models/round',
@@ -18,11 +18,11 @@ define([
             };
 
             this.events = {
-                'click .js-add-team-btn': 'onAddTeam',
-                'click .js-add-round-btn': 'onAddRound',
-                'click .js-add-score': 'onAddScore',
-                'click .js-delete-team': 'onDeleteTeam',
-                'click .js-open-scoreboard': 'openScoreboard'
+                'click .js-add-team-btn'    : 'onAddTeam',
+                'click .js-add-round-btn'   : 'onAddRound',
+                'click .js-add-score'       : 'onAddScore',
+                'click .js-delete-team'     : 'onDeleteTeam',
+                'click .js-open-scoreboard' : 'openScoreboard'
             };
 
             this.teams = [];

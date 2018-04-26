@@ -1,7 +1,7 @@
 define([
     'jquery',
-    'app/base',
-    'app/region',
+    'lib/base',
+    'lib/region',
     'mustache/mustache'
 ], function($, Base, Region, Mustache) {
     

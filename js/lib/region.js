@@ -1,7 +1,6 @@
 define([
     'jquery',
-    'app/base',
-    'app/view'
+    'lib/base'
 ], function($, Base) {
     
     class Region extends Base {

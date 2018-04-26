@@ -1,13 +1,15 @@
 requirejs.config({
     baseUrl: 'js',
     paths: {
-        app: 'app'
+        app: 'app',
+        lib: 'lib'
     }
 });
 
-require(
-    ['jquery', 'app/scoreboard/views/scoreboard', 'app/models/team'],
-    function ($, Scoreboard, Team) {
+require([
+    'jquery', 
+    'app/scoreboard/views/scoreboard'
+], function ($, Scoreboard) {
 
         var app_channel = window.opener.Components.App;
         var scoreboard = new Scoreboard();

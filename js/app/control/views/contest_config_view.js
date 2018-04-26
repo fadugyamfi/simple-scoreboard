@@ -1,5 +1,5 @@
 define([
-    'app/view',
+    'lib/view',
     'text!../templates/contest_config_view_template.jst'
 ], function(View, ContestConfigViewTemplate) {
     
