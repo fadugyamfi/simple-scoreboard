@@ -1,9 +1,8 @@
 define([
-    'jquery',
     'lib/base',
     'lib/region',
     'mustache/mustache'
-], function($, Base, Region, Mustache) {
+], function(Base, Region, Mustache) {
     
     class View extends Base {
 
@@ -29,7 +28,7 @@ define([
             var rendered = Mustache.render(this.template, this);
 
             if( this.element ) {
-                $(this.element).html(rendered);
+                document.querySelector(this.element).innerHtml = rendered;
             }
 
             this.onRender(rendered);

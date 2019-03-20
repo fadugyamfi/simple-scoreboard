@@ -10,7 +10,7 @@ define([
         }
 
         show(view) {
-            $(this.element).html( view.render() );
+            document.querySelector(this.element).innerHtml = view.render();
         }
     };
 

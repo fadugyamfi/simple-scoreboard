@@ -39,8 +39,8 @@ define([
         onAddTeam(e) {
             e.preventDefault();
 
-            var team_name = $(".js-team-name-field").val();
-            var rounds = $(".js-rounds-field").val();
+            var team_name = document.querySelector(".js-team-name-field").value;
+            var rounds = document.querySelector(".js-rounds-field").value;
 
             if(!team_name) {
                 alert('Please enter team name');
@@ -70,8 +70,8 @@ define([
         onAddScore(e) {
             e.preventDefault();
 
-            var score = $(e.currentTarget).data('score');
-            var round = $(e.currentTarget).data('round');
+            var score = e.currentTarget.dataList['score'];
+            var round = e.currentTarget.dataList['round'];
             var team_id = $(e.currentTarget).parents('.team-panel').data('id');
             var team = this.getTeam(team_id);
             

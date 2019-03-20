@@ -1,6 +1,6 @@
-#scoreboard {
+/*#scoreboard {
     
-}
+}*/
 
 #scoreboard > header {
     background-color: #069;
@@ -24,9 +24,9 @@
     display: inline-block;
 }
 
-#scoreboard > header .media {
+/*#scoreboard > header .media {
     
-}
+}*/
 
 #scoreboard > header .media .media-body {
     vertical-align: middle;
