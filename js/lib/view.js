@@ -3,7 +3,7 @@ define([
     'lib/region',
     'mustache/mustache'
 ], function(Base, Region, Mustache) {
-    
+
     class View extends Base {
 
         constructor(template, element) {
@@ -28,13 +28,13 @@ define([
             var rendered = Mustache.render(this.template, this);
 
             if( this.element ) {
-                document.querySelector(this.element).innerHtml = rendered;
+                document.querySelector(this.element).innerHTML = rendered;
             }
 
             this.onRender(rendered);
             this.trigger('render', rendered);
 
-            return rendered; 
+            return rendered;
         }
 
         /**
@@ -44,6 +44,6 @@ define([
 
         }
     };
-    
+
     return View;
 });

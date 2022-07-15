@@ -55,7 +55,7 @@ define([
             this.render();
 
             window.Components.App.trigger('Scoreboard.addTeam', team);
-            
+
         }
 
         onAddRound(e) {
@@ -70,13 +70,13 @@ define([
         onAddScore(e) {
             e.preventDefault();
 
-            var score = e.currentTarget.dataList['score'];
-            var round = e.currentTarget.dataList['round'];
+            var score = e.currentTarget.dataset.score;
+            var round = e.currentTarget.dataset.round;
             var team_id = $(e.currentTarget).parents('.team-panel').data('id');
             var team = this.getTeam(team_id);
-            
+
             team.getRound(round).incrementScore(score);
-            
+
             this.render();
 
             window.Components.App.trigger('Scoreboard.teamUpdated', team);
@@ -106,7 +106,7 @@ define([
 
         onRender() {
             this.getRegion('config').show( new ContestConfigView() );
-            
+
             window.Components.App.trigger('ControlBoard.DataUpdated', this.teams);
         }
 

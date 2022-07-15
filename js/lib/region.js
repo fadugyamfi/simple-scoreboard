@@ -2,7 +2,7 @@ define([
     'jquery',
     'lib/base'
 ], function($, Base) {
-    
+
     class Region extends Base {
 
         constructor(element) {
